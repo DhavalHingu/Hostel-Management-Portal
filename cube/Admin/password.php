@@ -1,15 +1,11 @@
-<?php ?>
-<!DOCTYPE HTML>
-<!--
-	Aesthetic by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
--->
+<?php error_reporting(0);
+   include '..\connect.php';
+   ?>
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Add Rooms</title>
+	<title>Change Password</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -175,7 +171,7 @@
 									<li><a href="#">View Block</a></li>
 									<li><a href="room.php">Add Room</a></li>
 									<li><a href="#">View Room</a></li>
-									<li><a href="alott.php">Allot Room</a></li>
+									<li><a href=alott.php>Allot Room</a></li>
 								</ul>
 							</li>
 						<li class="has-dropdown">
@@ -200,27 +196,39 @@
 			-->
 <div style="background-color: #5bc0de;">
 <div class="container" style="background-color: #5bc0de;}">
-    <h1 class="well">Add Blocks</h1>
+    <h1 class="well">Add Rooms</h1>
 	<div class="col-lg-12 well">
 	<div class="row">
-				<form action="reg_block.php" method="POST">
+				<form method="POST" action="reg_room.php">
 					<div class="col-sm-12">
 						<div class="row">
 							<div class="col-sm-6 form-group">
-								<label>Block No.</label>
-								<input type="text"  class="form-control" name="block">
+								<label>Old Password</label>
+								<input type="text"  class="form-control" name="op">
 							</div>
 							
-                  <br>
-					<input type="submit" class="btn btn-lg btn-info" value="Add">					
-					 
+					      
+                          <div class="col-sm-6 form-group">
+								<label>New Password</label>
+								<input type="text"  class="form-control" name="np">
+ 							</div>
+							
+                          <div class="col-sm-12 form-group">
+								<label>Confirm Password</label>
+								<input type="text" class="form-control" name="cp">
+ 							</div>
+						
+                                 
+                           <center>
+
+					<input type="submit" class="btn btn-lg btn-info">					
+					</center> 
 					</div>
 				</form> 
 				
 				</div>
 
-	</div>
-	</div>
+	
 
 </div>
 

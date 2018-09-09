@@ -1,10 +1,6 @@
-<?php ?>
-<!DOCTYPE HTML>
-<!--
-	Aesthetic by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
--->
+<?php error_reporting(0);
+   include '..\connect.php';
+   ?>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -203,30 +199,48 @@
     <h1 class="well">Add Rooms</h1>
 	<div class="col-lg-12 well">
 	<div class="row">
-				<form>
+				<form method="POST" action="reg_room.php">
 					<div class="col-sm-12">
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Room No.</label>
-								<input type="text"  class="form-control">
+								<input type="text"  class="form-control" name="room">
 							</div>
 							<div class="col-sm-6 form-group">
 								<label>Block Name</label>
-								<select  class="form-control">
-									<option selected>Block Name</option>
-								</select>
-							</div>
-					
+								<select class="form-control" name="block">
+								
+                                  <option selected>Select Block</option>
+									 <?php
+               
+             $sel=mysql_query("SELECT `block_no` FROM block_master") or die(mysql_error());
+                        
+            while($row=mysql_fetch_array($sel)){
+
+echo '<option value="'.$row['block_no'].'">'.$row['block_no'].'</option>';
+
+
+
+
+            	?>
+                                
+        <?php } ?>
+
+
+
+				</select>
+                     </div>
+
+					    
                            <center>  
-					<button type="submit" class="btn btn-lg btn-info">Add</button>					
+					<input type="submit" class="btn btn-lg btn-info">					
 					</center> 
 					</div>
 				</form> 
 				
 				</div>
 
-	</div>
-	</div>
+	
 
 </div>
 

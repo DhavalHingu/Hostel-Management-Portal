@@ -1,4 +1,6 @@
-<?php ?>
+<?php error_reporting(0);
+   include '..\connect.php';
+   ?>
 <!DOCTYPE HTML>
 <!--
 	Aesthetic by gettemplates.co
@@ -203,33 +205,48 @@
     <h1 class="well">Add Fees</h1>
 	<div class="col-lg-12 well">
 	<div class="row">
-				<form>
+				<form action="confirm_fees.php" method="POST">
 					<div class="col-sm-12">
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Student Name</label>
-								<select class="form-control">
+								<select class="form-control" name="sname">
 									<option selected>Select Student Name</option>
+									 <?php
+               
+             $sel=mysql_query("SELECT `fname`,`email`  FROM `register` where `status` = '1' ") or die(mysql_error());
+                        
+            while($row=mysql_fetch_array($sel)){
+
+echo '<option value="'.$row['email'].'">'.$row['fname'].'</option>';
+
+
+
+            	?>
+                                
+        <?php } ?>
 								</select>
 							</div>
+							<input type="hidden" name="insid" value="" />
 							<div class="col-sm-6 form-group">
 								<label>Fees Type</label>
-								<select  class="form-control">
+								<select  class="form-control" name="ft">
 									<option selected>Hostel Fees</option>
 								<option >Hostel + Mess Fees</option>
 								</select>
 							</div>
 					<div class="col-sm-6 form-group">
 								<label>Total Fees</label>
-								<input type="text"  class="form-control">
+								<input type="text"  class="form-control" name="tf">
 							</div>
                            
 <div class="col-sm-6 form-group">
 								<label>Date</label>
-								<input type="date"  class="form-control">
+								<input type="date"  class="form-control" name="dt">
 							</div>
                            <center>  
-					<button type="submit" class="btn btn-lg btn-info">Add</button>					
+
+					<input type="submit" class="btn btn-lg btn-info">					
 					</center> 
 					</div>
 				</form> 

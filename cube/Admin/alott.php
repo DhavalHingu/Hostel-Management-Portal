@@ -1,59 +1,114 @@
-<?php ?>
+<?php 
+  error_reporting(0);
+   include '..\connect.php';
+  
+  
+  
+
+   ?>
+
+
 <!DOCTYPE HTML>
 <!--
-	Aesthetic by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
+	Aesthetic by dhaval hingu.
+	
 -->
 <html>
 	<head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Allot Rooms</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="gettemplates.co" />
+		<title>Allot Rooms</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+  	<!-- for table -->
+<style type="text/css">
+		body {
+			font-size: 15px;
+			color: #343d44;
+			font-family: "segoe-ui", "open-sans", tahoma, arial;
+			padding: 0;
+			margin: 0;
+		}
+		table {
+			margin: auto;
+			font-family: "Lucida Sans Unicode", "Lucida Grande", "Segoe Ui";
+			font-size: 12px;
+		}
 
-	<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700" rel="stylesheet">
+		h1 {
+			margin: 25px auto 0;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 17px;
+		}
+
+		table td {
+			transition: all .5s;
+		}
+		
+		/* Table */
+		.data-table {
+			border-collapse: collapse;
+			font-size: 14px;
+			min-width: 537px;
+		}
+
+		.data-table th, 
+		.data-table td {
+			border: 1px solid #e1edff;
+			padding: 7px 17px;
+		}
+		.data-table caption {
+			margin: 7px;
+		}
+
+		/* Table Header */
+		.data-table thead th {
+			background-color: #508abb;
+			color: #FFFFFF;
+			border-color: #6ea1cc !important;
+			text-transform: uppercase;
+		}
+
+		/* Table Body */
+		.data-table tbody td {
+			color: #353535;
+		}
+		.data-table tbody td:first-child,
+		.data-table tbody td:nth-child(4),
+		.data-table tbody td:last-child {
+			text-align: right;
+		}
+
+		.data-table tbody tr:nth-child(odd) td {
+			background-color: #f4fbff;
+		}
+		.data-table tbody tr:hover td {
+			background-color: #ffffa2;
+			border-color: #ffff0f;
+		}
+
+		/* Table Footer */
+		.data-table tfoot th {
+			background-color: #e5f5ff;
+			text-align: right;
+		}
+		.data-table tfoot th:first-child {
+			text-align: left;
+		}
+		.data-table tbody td:empty
+		{
+			background-color: #ffcccc;
+		}
+	</style>
+	<!---------------------------------------------------------------------------------------------->
+
 	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Themify Icons-->
-	<link rel="stylesheet" href="css/themify-icons.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
- <!--css for registration form-->
+  <!--css for registration form-->
 	<style type="text/css">
 		@import "font-awesome.min.css";
 @import "font-awesome-ie7.min.css";
@@ -133,7 +188,31 @@
   }
 }
 	</style>
-	</head>
+ 
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Themify Icons-->
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+</head>
 	<body>
 		
 	<div class="gtco-loader"></div>
@@ -160,7 +239,7 @@
 							<li class="has-dropdown">
 								<a href="#">Student</a>
 								<ul class="dropdown">
-									<li><a href="#">View Registration</a></li>
+									<li><a href="reg_view.php">View Registration</a></li>
 									<li><a href="fees.php">Fees</a></li>
 									<li><a href="#">View Fees</a></li>
 									
@@ -203,24 +282,124 @@
     <h1 class="well">Allot Rooms </h1>
 	<div class="col-lg-12 well">
 	<div class="row">
-				<form>
+				<form method="POST" action="process_alott.php">
 					<div class="col-sm-12">
 						<div class="row">
+							
+
+
+                         
+
+
+
+
+
+
+
+
 							<div class="col-sm-6 form-group">
 								<label>Student Name</label>
-								<select  class="form-control">
-									<option selected>Select student name</option>
-								</select>
+								<select class="form-control" name="sname">
+								
+                                  <option selected>Select Student name</option>
+									 <?php
+               
+             $sel=mysql_query("SELECT `fname` FROM register where `status` = '2' ") or die(mysql_error());
+                        
+            while($row=mysql_fetch_array($sel)){
+
+echo '<option value="'.$row['fname'].'">'.$row['fname'].'</option>';
+
+
+
+
+            	?>
+                                
+        <?php } ?>
+</select>
+</div>
+ <div class="col-sm-6 form-group">
+								<label>Student Email</label>
+								<select class="form-control" name="email">
+								
+                                  <option selected>Select Student </option>
+									 <?php
+               
+             $sel=mysql_query("SELECT `fname` FROM register where `status` = '2' ") or die(mysql_error());
+                        
+            while($row=mysql_fetch_array($sel)){
+
+echo '<option value="'.$row['fname'].'">'.$row['fname'].'</option>';
+
+
+
+
+            	?>
+                                
+        <?php } ?>
+
+				</select>
 							</div>
 							<div class="col-sm-6 form-group">
 								<label>Allot Block & Room</label>
-								<select  class="form-control">
-									<option selected>Select Block & Room</option>
-								</select>
+								<select class="form-control" name="block">
+								
+                                  <option selected>Select Block</option>
+									 <?php
+               
+             $sel=mysql_query("SELECT `block_no` FROM block_master") or die(mysql_error());
+                        
+            while($row=mysql_fetch_array($sel)){
+
+echo '<option value="'.$row['block_no'].'">'.$row['block_no'].'</option>';
+
+
+
+
+            	?>
+                                
+        <?php } ?>
+
+
+
+				</select>
+<input type="hidden" name="insid" value="<?php  mysql_query("SELECT * from register where `email`")   ?>" />
+<select class="form-control" name="room">
+								
+                                  <option selected>Select Room</option>
+									 <?php
+               
+             $sel=mysql_query("SELECT `room_no` FROM room_master") or die(mysql_error());
+                        
+            while($row=mysql_fetch_array($sel)){
+
+echo '<option value="'.$row['room_no'].'">'.$row['room_no'].'</option>';
+
+
+
+
+            	?>
+                                
+        <?php } ?>
+
+
+
+				</select>
+
+
+
+
+
+
+
+
+
+
+
 							</div>
 					
                            <center>  
-					<button type="submit" class="btn btn-lg btn-info">Allot</button>					
+					<input type="submit" class="btn btn-lg btn-info">				
 					</center> 
 					</div>
 				</form> 
@@ -228,7 +407,16 @@
 				</div>
 
 	</div>
+	
+
+
+
 	</div>
+
+
+
+
+
 
 </div>
 
@@ -238,7 +426,95 @@
 					</div>
 				</div> -->
 			</div>
+		<div style="background-color: #5bc0de;">
+<h1 class="well">View ALLOT Rooms</h1>
+<table class="data-table"><br> <br>
+	
+		<thead>
+			<tr>
+				<th>no</th>
+				<th>name</th>
+				<th>Block name</th>
+				<th>room name</th>
+				
+
+
+			</tr>
+		</thead>
+		<tbody>
+			
+	<?php
+	$i=1;
+ 	$sql_sel_sub="select * from register where status='0' ";
+ 	$res_sel_sub= mysql_query($sql_sel_sub,$conn);
+ 	
+	while ($row=mysql_fetch_array($res_sel_sub )){
+	
+	$a= $row['fname'];
+	$b= $row['lname'];
+	$c= $row['dob'];
+	$d= $row['contact'];
+	$e= $row['email'];
+	$f= $row['stream'];
+	$g= $row['college'];
+	$h= $row['result'];
+	$ii= $row['aadhar'];
+
+	
+	
+	echo "<tr>";
+		echo "<td>".$i++."</td>";
+			echo "<td>".$a."</td>";
+			echo "<td>".$b."</td>";
+			echo "<td>".$c."</td>";
+			echo "<td>".$d."</td>";
+			echo "<td>".$e."</td>";
+			echo "<td>".$f."</td>";
+			echo "<td>".$g."</td>";
+			echo "<td>".$h."</td>";
+			echo "<td>".$ii."</td>";
+			echo "<td>"."<a href='confirm.php?email=" .$row['email'] ."'>Confirm</a></td>";
+			
+			
+		
+
+	echo "</tr>";
+	}?>
+			
+		
+		</tbody>
+		<tfoot>
+			<tr>
+				</tr>
+		</tfoot>
+	</table>
+<br><br>
+
+ 			
+		
+		</tbody>
+		<tfoot>
+			<tr>
+				</tr>
+		</tfoot>
+	</table>
+
+
+
+
+
+
 		</div>
+		
+
+
+
+           
+ 
+
+
+
+
 		<!-- END .gtco-products -->
 
 		

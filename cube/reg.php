@@ -3,32 +3,38 @@ error_reporting(0);
   include('connect.php');
 
   $a=$_POST['fname'];
-  $b=$_POST['mname'];
-  $c=$_POST['lname'];
+  $b=$_POST['lname'];
+  //$c=$_POST['lname'];
   $d=$_POST['address'];
   $e=$_POST['dob'];
   $f=$_POST['contact'];
   $g=$_POST['parent'];
   $h=$_POST['email'];
   $i=$_POST['stream'];
-  $j=$_POST['college'];
+  $jj=$_POST['College'];
   $k=$_POST['result'];
   $l=$_POST['aadhar'];
 
-
- $sql=mysql_query("INSERT INTO register(`fname`,`mname`,`lname`,`address`,`dob`,`contact`,`parent`,`email`,`stream`,`college`,`result`,`aadhar`) values('$a','$b','$c','$d','$e','$f','$g','$h','$i','$j','$k','$l')");
+$serch=mysql_query("select * from register where email='$h'");
+          if(mysql_num_rows($serch)>0){
+             echo ("<SCRIPT LANGUAGE='JavaScript'>
+    window.alert('email already Registered!')
+    window.location.href='register.html';
+    </SCRIPT>");
+          } else {
+ $sql=mysql_query("INSERT INTO register(`fname`,`mname`,`address`,`dob`,`contact`,`parent`,`email`,`stream`,`college`,`result`,`aadhar`) values('$a','$b','$d','$e','$f','$g','$h','$i','$jj','$k','$l')");
 
 
 
 
  	if(!$sql)
  	{
-       echo "not";
+       mysql_error();
  	}
 
  	else{
 
-$to = "vforvendetta502@gmail.com";
+$to = $h;
 $subject = "Registered";
 $message = "your regestration is confirm...  ";
 $from = "From: dhaval7030@gmail.com";
@@ -39,5 +45,5 @@ $s=mail($to, $subject, $message, $from);
     window.location.href='register.html';
     </SCRIPT>");
  	}
-
+}
 ?>

@@ -1,18 +1,11 @@
 <!DOCTYPE HTML>
-<!--
-	Aesthetic by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
--->
 <html>
 	<head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
 	<title>Register </title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="gettemplates.co" /><link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -20,15 +13,6 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
   	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
 	
   <!--css for registration form-->
 	<style type="text/css">
@@ -111,7 +95,55 @@
 }
 	</style>
 
-	
+	<!-- Validation Script-->
+<script type="text/javascript">
+function phonenumber(input)
+{
+  var phoneno = /^\d{10}$/;
+  if(input.value.match(phoneno))
+  {
+      return true;
+  }
+  else
+  {
+     alert("Not a valid Phone Number");
+     return false;
+  }
+  }
+
+
+function validateEmail(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(emailField.value) == false) 
+        {
+            alert('Invalid Email Address');
+            return false;
+        }
+
+        return true;
+
+}
+
+function AadharValidate(no) {
+        
+        var aadhar = /^\d{12}$/;
+        
+            if (aadhar.test(no.value)==false) {
+                alert("Enter valid Aadhar Number");
+                return false;
+                      }
+             else {
+                    return true;
+
+               }
+        }
+
+
+
+</script>
+
+	<!-------------------------------------------------------------->
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700" rel="stylesheet">
 	
@@ -139,7 +171,8 @@
 </head>
 <body>
 		
-	<div class="gtco-loader"></div>
+	<div class="gtco-loader"> 
+	</div>
 	
 	<div id="page">
 
@@ -177,71 +210,68 @@
     <h1 class="well">Registration Form</h1>
 	<div class="col-lg-12 well">
 	<div class="row">
-				<form action="reg.php" method="POST">
+				<form action="reg.php" method="POST" name="form1">
 					<div class="col-sm-12">
 						<div class="row">
-							<div class="col-sm-6 form-group">
-								<label>First Name</label>
-								<input type="text" placeholder="your name" class="form-control" name="fname">
+							<div class="col-sm- 6 form-group">
+								<label>Name</label>
+								<input type="text" placeholder="your name" class="form-control" name="fname" required>
 							</div>
 							<div class="col-sm-6 form-group">
-								<label>Middle Name</label>
-								<input type="text" placeholder="father's name" class="form-control" name="mname">
+								<label>Father's name</label>
+								<input type="text" placeholder="father's name" class="form-control" name="lname" required>
 							</div>
 					
-                                       <div class="col-sm-6 form-group">
-								<label>Last Name</label>
-								<input type="text" placeholder="surname" class="form-control" name="lname">
-							</div>
+                                       
 					
                           
 						</div>					
 						<div class="form-group">
 							<label>Address</label>
-							<textarea placeholder="Enter Address Here.." rows="3" class="form-control" name="address"></textarea>
+							<textarea placeholder="Enter Address Here.." rows="3" class="form-control" name="address" required></textarea>
 						</div>	
 						<div class="row">
 							<div class="col-sm-4 form-group">
 								<label>Date Of Bitrh</label>
-								<input type="date" placeholder="" class="form-control" name="dob">
+								<input type="date" placeholder="" class="form-control" name="dob" required>
 							</div>	
 							<div class="col-sm-4 form-group">
 								<label>Contact no</label>
-								<input type="text" placeholder="" class="form-control" name="contact">
+								<input type="text" placeholder="" class="form-control" name="contact" required onblur="phonenumber(document.form1.contact)">
 							</div>	
 							<div class="col-sm-4 form-group">
 								<label>Parent no.</label>
-								<input type="text" placeholder="" class="form-control" name="parent">
+								<input type="text" placeholder="" class="form-control" name="parent" required onblur="phonenumber(document.form1.parent)">
 							</div>		
 						</div>
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Email-id</label>
-								<input type="text" placeholder="Enter email-id Here.." class="form-control" name="email">
+								<input type="text" placeholder="Enter email-id Here.." class="form-control" name="email" required  onblur="validateEmail(this);">
 							</div>		
 							<div class="col-sm-6 form-group">
 								<label>Stream</label>
-								<input type="text" placeholder="Enter your stream Here.." class="form-control" name="stream">
+								<input type="text" placeholder="Enter your stream Here.." class="form-control" name="stream" required>
 							</div>	
 						</div>						
 					<div class="form-group">
-						<label>College</label>1
-						<input type="text" placeholder="Enter College name Here.." class="form-control" name="College">
+						<label>College</label>
+						<input type="text" placeholder="Enter College name Here.." class="form-control" name="College" required>
 					</div>		
 					<div class="form-group">
 						<label>Result</label>
-						<input type="text" placeholder="last sem Result(% or spi)" class="form-control" name="result">
+						<input type="text" placeholder="last sem Result(% or spi)" class="form-control" name="result" required>
 					</div>	
 					<div class="form-group">
 						<label>Aadhar no.</label>
-						<input type="text" placeholder="Enter your Aadhar card no Here.." class="form-control" name="aadhar">
+						<input type="text" placeholder="Enter your Aadhar card no Here.." class="form-control" name="aadhar" required onblur="AadharValidate(this);">
 					</div>
 					<div class="form-group">
 								<label>Upload result / Certificate</label>
 								<input type="file" placeholder="Enter Last Name Here.." class="form-control">
 							</div>
 					
-					<input type="submit" class="btn btn-lg btn-info">				
+					<input type="submit" class="btn btn-lg btn-info" >				
 					</div>
 				</form> 
 				
